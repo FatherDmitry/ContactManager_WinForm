@@ -21,11 +21,6 @@ namespace ContactManager
             UpdateGrid();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
@@ -144,6 +139,20 @@ namespace ContactManager
                     c.InternalPhone
                 }).ToList();
         }
+
+        // Кнопка <Экспорт (сохранить список JSON)>
+        private void btnSaveToJson_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Кнопка <Импорт (загрузить список JSON)>
+        private void btnLoadFromJson_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
 
         private void dataGridViewContacts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
