@@ -159,7 +159,8 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(773, 8);
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(1001, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(94, 35);
             this.btnSearch.TabIndex = 11;
@@ -169,7 +170,8 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(233, 12);
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(461, 12);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(534, 31);
@@ -178,12 +180,15 @@
             // 
             // dataGridViewContacts
             // 
+            this.dataGridViewContacts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewContacts.Location = new System.Drawing.Point(233, 53);
             this.dataGridViewContacts.Name = "dataGridViewContacts";
             this.dataGridViewContacts.RowHeadersWidth = 51;
             this.dataGridViewContacts.RowTemplate.Height = 24;
-            this.dataGridViewContacts.Size = new System.Drawing.Size(634, 434);
+            this.dataGridViewContacts.Size = new System.Drawing.Size(860, 434);
             this.dataGridViewContacts.TabIndex = 13;
             this.dataGridViewContacts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContacts_CellContentClick);
             // 
@@ -211,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 499);
+            this.ClientSize = new System.Drawing.Size(1107, 499);
             this.Controls.Add(this.btnLoadFromJson);
             this.Controls.Add(this.btnSaveToJson);
             this.Controls.Add(this.dataGridViewContacts);

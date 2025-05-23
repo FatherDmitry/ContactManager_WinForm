@@ -143,13 +143,14 @@ namespace ContactManager
         // Кнопка <Экспорт (сохранить список JSON)>
         private void btnSaveToJson_Click(object sender, EventArgs e)
         {
-
+            JsonStorage.Save(contacts);
         }
 
         // Кнопка <Импорт (загрузить список JSON)>
         private void btnLoadFromJson_Click(object sender, EventArgs e)
         {
-
+            contacts = JsonStorage.Load();
+            UpdateGrid();
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////
