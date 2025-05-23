@@ -64,20 +64,45 @@ namespace ContactManager
         // Кнопка <Добавить>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // Создание нового контакта
-            Contact c = new Contact
+            // Очистка подсветки
+            txtFirstName.BackColor = Color.White;
+            txtLastName.BackColor = Color.White;
+            txtCompany.BackColor = Color.White;
+            txtEmail.BackColor = Color.White;
+
+            var contact = new Contact
             {
-                LastName = txtLastName.Text,
-                FirstName = txtFirstName.Text,
-                MiddleName = txtMiddleName.Text,
-                Company = txtCompany.Text,
-                Email = txtInternalPhone.Text,
-                Position = txtPosition.Text,
-                PersonalPhone = txtPersonalPhone.Text,
-                InternalPhone = txtInternalPhone.Text
+                LastName = txtLastName.Text.Trim(),
+                FirstName = txtFirstName.Text.Trim(),
+                MiddleName = txtMiddleName.Text.Trim(),
+                Company = txtCompany.Text.Trim(),
+                Email = txtEmail.Text.Trim(),
+                Position = txtPosition.Text.Trim(),
+                PersonalPhone = txtPersonalPhone.Text.Trim(),
+                InternalPhone = txtInternalPhone.Text.Trim()
             };
 
-            contacts.Add(c); // Добавление контакта в список
+            // Валидация обязательных полей
+            if (!ContactValidator.ValidateRequiredFields(contact, out string requiredError))
+            {
+                // Подсветка проблемных полей
+                if (string.IsNullOrWhiteSpace(contact.FirstName)) txtFirstName.BackColor = Color.LightPink;
+                if (string.IsNullOrWhiteSpace(contact.LastName)) txtLastName.BackColor = Color.LightPink;
+                if (string.IsNullOrWhiteSpace(contact.Company)) txtCompany.BackColor = Color.LightPink;
+
+                MessageBox.Show(requiredError, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Валидация email
+            if (!ContactValidator.ValidateEmail(contact.Email, out string emailError))
+            {
+                txtEmail.BackColor = Color.LightPink;
+                MessageBox.Show(emailError, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            contacts.Add(contact); // Добавление контакта в список
             ClearInputs(); // Очистка полей ввода
             UpdateGrid(); // Обновление таблицы
 
