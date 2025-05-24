@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic; // Для использования InputBox
 
 namespace ContactManager
 {
@@ -18,6 +19,10 @@ namespace ContactManager
         public Form1()
         {
             InitializeComponent();
+            btnSaveToJson.Enabled = false; // Кнопка <Экспорт> отключена по умолчанию
+            btnAdd.Enabled = false; // Кнопка <Добавить> отключена по умолчанию
+            btnEdit.Enabled = false; // Кнопка <Изменить> отключена по умолчанию
+            btnDelete.Enabled = false; // Кнопка <Удалить> отключена по умолчанию
             UpdateGrid();
         }
 
@@ -59,6 +64,30 @@ namespace ContactManager
         private void txtInternalPhone_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private bool isAdmin = true; // Флаг для проверки, является ли пользователь администратором
+        
+        // Кнопка <Admin>
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            string input = Microsoft.VisualBasic.Interaction.InputBox("Введите пароль администратора:", "Проверка доступа", "");
+
+            if (input == "Qwerty!1") // Проверка пароля
+            {
+                isAdmin = true; // Установка флага
+                MessageBox.Show("Доступ предоставлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Включение кнопок
+                btnSaveToJson.Enabled = true;
+                btnAdd.Enabled = true;
+                btnEdit.Enabled = true;
+                btnDelete.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Неверный пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // Кнопка <Добавить>
@@ -105,7 +134,6 @@ namespace ContactManager
             contacts.Add(contact); // Добавление контакта в список
             ClearInputs(); // Очистка полей ввода
             UpdateGrid(); // Обновление таблицы
-
         }
 
         // Кнопка <Изменить>
@@ -227,6 +255,5 @@ namespace ContactManager
             txtInternalPhone.Clear();
             selectedIndex = -1; // Сброс индекса выбранного контакта
         }
-
     }
 }

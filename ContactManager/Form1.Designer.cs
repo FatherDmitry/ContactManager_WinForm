@@ -53,6 +53,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContacts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -285,11 +286,22 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Внутренний номер телефона";
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(233, 6);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(92, 35);
+            this.btnAdmin.TabIndex = 24;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 595);
+            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -349,6 +361,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }
 
