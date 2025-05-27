@@ -78,7 +78,7 @@ namespace ContactManager
                 isAdmin = true; // Установка флага
                 MessageBox.Show("Доступ предоставлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Включение кнопок
+                // Включение кнопок под возможностями Администратора
                 btnSaveToJson.Enabled = true;
                 btnAdd.Enabled = true;
                 btnEdit.Enabled = true;

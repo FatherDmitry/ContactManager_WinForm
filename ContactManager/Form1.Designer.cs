@@ -151,7 +151,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(64, 506);
+            this.btnDelete.Location = new System.Drawing.Point(15, 506);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 35);
             this.btnDelete.TabIndex = 10;
@@ -162,7 +162,7 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(1012, 8);
+            this.btnSearch.Location = new System.Drawing.Point(1010, 12);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(94, 35);
             this.btnSearch.TabIndex = 11;
@@ -172,11 +172,12 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(472, 12);
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(431, 13);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(534, 31);
+            this.txtSearch.Size = new System.Drawing.Size(575, 31);
             this.txtSearch.TabIndex = 12;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -196,7 +197,7 @@
             // 
             // btnSaveToJson
             // 
-            this.btnSaveToJson.Location = new System.Drawing.Point(15, 550);
+            this.btnSaveToJson.Location = new System.Drawing.Point(115, 506);
             this.btnSaveToJson.Name = "btnSaveToJson";
             this.btnSaveToJson.Size = new System.Drawing.Size(94, 33);
             this.btnSaveToJson.TabIndex = 14;
@@ -206,11 +207,11 @@
             // 
             // btnLoadFromJson
             // 
-            this.btnLoadFromJson.Location = new System.Drawing.Point(115, 550);
+            this.btnLoadFromJson.Location = new System.Drawing.Point(331, 13);
             this.btnLoadFromJson.Name = "btnLoadFromJson";
             this.btnLoadFromJson.Size = new System.Drawing.Size(94, 33);
             this.btnLoadFromJson.TabIndex = 15;
-            this.btnLoadFromJson.Text = "Импорт";
+            this.btnLoadFromJson.Text = "Обновить";
             this.btnLoadFromJson.UseVisualStyleBackColor = true;
             this.btnLoadFromJson.Click += new System.EventHandler(this.btnLoadFromJson_Click);
             // 
@@ -288,7 +289,7 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(233, 6);
+            this.btnAdmin.Location = new System.Drawing.Point(233, 11);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(92, 35);
             this.btnAdmin.TabIndex = 24;
